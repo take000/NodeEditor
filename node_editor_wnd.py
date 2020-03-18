@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
-from node_graphics_scene import QDMGraphicsScene
+from node_scene import Scene
 from node_graphics_view import QDMGraphicsView
 
 
@@ -20,7 +20,8 @@ class NodeEditorWnd(QWidget):
         self.setLayout(self.layout)
 
         # graphics scene
-        self.grScene = QDMGraphicsScene()
+        self.scene = Scene()
+        self.grScene=self.scene.grScene
 
         # graphics view
         self.view = QDMGraphicsView(self.grScene,self)
