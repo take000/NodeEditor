@@ -56,6 +56,7 @@ class QDMGraphicsView(QGraphicsView):
         self.setDragMode(QGraphicsView.ScrollHandDrag)
         fakeEvent = QMouseEvent(event.type(), event.localPos(), event.screenPos(),
                                 Qt.LeftButton, event.buttons() | Qt.LeftButton, event.modifiers())
+        super().mousePressEvent(fakeEvent)
 
     def middleMouseButtonRelease(self, event):
         fakeEvent = QMouseEvent(event.type(), event.localPos(), event.screenPos(),
